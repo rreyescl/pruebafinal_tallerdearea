@@ -20,7 +20,7 @@ class ModeloDeporte{
 		$responsearray = array();
 		try{
 			$result = array();
-			$stm=$this->pdo->prepare("SELECT * FROM deporte order by id asc");
+			$stm=$this->pdo->prepare("SELECT * FROM deporte order by deporte_id asc");
 			$stm->execute();
 			foreach($stm->fetchALL(PDO::FETCH_OBJ) as $r){
 				$_deporte = new Deporte();
