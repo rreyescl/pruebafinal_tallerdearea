@@ -10,7 +10,7 @@ $(document).ready(function(){
             data: datax,
             type: "GET",
             dataType: "json",
-            url: "http://localhost:8090/apiphp/miappws/controllers/controllerprofesor.php",
+            url: parent.location+"/controllers/deporteController.php",
         })
         .done(function( data, textStatus, jqXHR ) {
             $("#listaprofesores").html("");
