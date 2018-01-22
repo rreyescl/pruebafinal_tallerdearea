@@ -1,8 +1,6 @@
-$(document).ready(function(){
-
-  
+//$(document).ready(function(){
     
-    var getlista = function (){
+    var getDeporte = function (){
         var datax = {
             "Accion":"listar"
         }
@@ -48,4 +46,4 @@ $(document).ready(function(){
             }
         });
     }
-	}
+//});
