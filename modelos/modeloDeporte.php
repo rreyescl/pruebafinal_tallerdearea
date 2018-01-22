@@ -24,14 +24,13 @@ class ModeloDeporte{
 			$stm->execute();
 			foreach($stm->fetchALL(PDO::FETCH_OBJ) as $r){
 				$_deporte = new Deporte();
-				$cuerpocel->__SET('deporte_id', $r->deporte_id);
-				$cuerpocel->__SET('deporte_nombre', $r->deporte_nombre);
-				$cuerpocel->__SET('deporte_descripcion', utf8_encode($r->deporte_descripcion));
-				$cuerpocel->__SET('deporte_urlimagenp', $r->deporte_urlimagenp);
-				$cuerpocel->__SET('deporte_imagen_p', $r->deporte_imagen_p);
-				$cuerpocel->__SET('deporte_imagen_s', $r->deporte_imagen_s);
-                $cuerpocel->__SET('deporte_categoria_id', $r->deporte_categoria_id);
-				$result[] = $cuerpocel->returnArray();
+				$_deporte->__SET('deporte_id', $r->deporte_id);
+				$_deporte->__SET('deporte_nombre', $r->deporte_nombre);
+				$_deporte->__SET('deporte_descripcion', utf8_encode($r->deporte_descripcion));				
+				$_deporte->__SET('deporte_imagen_p', $r->deporte_imagen_p);
+				$_deporte->__SET('deporte_imagen_s', $r->deporte_imagen_s);
+                $_deporte->__SET('deporte_categoria_id', $r->deporte_categoria_id);
+				$result[] = $_deporte->returnArray();
 			}
 			$responsearray['success']=true;
 			$responsearray['message']='Listado correctamente';
