@@ -20,11 +20,11 @@ body{
 }
 /*-- banner --*/
 .w3-banner{
-	background: url(img/cover.jpg) no-repeat 0px 0px;
+	background: url(../img/cover.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 .wthree-different-dot {
-    background: url(img/cover2.jpg)repeat 0px 0px;
+    background: url(../img/cover2.jpg)repeat 0px 0px;
     background-size: 2px;
     -webkit-background-size: 2px;
     -moz-background-size: 2px;
@@ -1322,7 +1322,7 @@ button.btn1:hover {
 	height: 40px;
 	border: none;
 	text-indent: 100%;
-	background: url(./img/arrow.jpg) no-repeat 0px 0px;
+	background: url(../img/arrow.jpg) no-repeat 0px 0px;
 }
 #toTopHover {
 	width: 40px;
