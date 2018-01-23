@@ -1,9 +1,60 @@
-$(document).ready(function(){
-    
-    var getCategorias = function (){
-        console.log("entro al ajax");
 
-        var data = {
+    var getCategorias = function (){
+
+        console.log("entro al ajax");
+        var datax = {
+            "Accion":"listar"
+        }
+        $.ajax({
+            data: datax,
+            type: "GET",
+            dataType: "json",
+            url: parent.location+"../../../controllers/deporteController.php",
+        })
+        .done(function( data, textStatus, jqXHR ) {
+            $("#categorias").html("");
+            if ( console && console.log ) {
+                console.log( " data success : "+ data.success
+                    + " \n data msg : "+ data.message
+                    + " \n textStatus : " + textStatus
+                    + " \n jqXHR.status : " + jqXHR.status );
+            }
+            for(var i=0; i<data.datos.length;i++){
+                                //$.each(data.datos[i], function(k, v) { console.log(k + ' : ' + v); });
+                                console.log('id: '+data.datos[i].deporte_id);
+
+                                ///categoria comienzo
+                                fila ='<div class=row>';
+                                fila += '<div class="banner-bottom-grids">';
+                                fila += '<div class="col-sm-12 banner-bottom-left">';
+                                fila += '<div class="left-border">';
+                                fila += '<div class="left-border-info">';
+                                fila += '<h4> '+  data.datos[i].deporte_nombre + '</h4>';
+                                fila += '<p>'+  data.datos[i].deporte_descripcion +'</p>';
+                                fila += '</div>';
+                                fila += '</div>';
+                                fila += '<div class="clearfix"> </div>';
+                                ///categoria fin
+
+                                fila += '<button id="ver-deporte" type="button" '
+                                fila += 'class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal2"'
+                                fila += ' onclick="verDeporte(' + data.datos[i].deporte_id + ')">';
+                                fila += 'Ver</button>';
+                                fila +='</div>';
+
+                                $("#categorias").append(fila);
+            }
+        })
+        .fail(function( jqXHR, textStatus, errorThrown ) {
+
+            if ( console && console.log ) {
+                console.log( " La solicitud getlista ha fallado,  textStatus : " +  textStatus
+                    + " \n errorThrown : "+ errorThrown
+                    + " \n textStatus : " + textStatus
+                    + " \n jqXHR.status : " + jqXHR.status );
+            }
+        });
+        /*var data = {
             "success": true,
             "message": "Listado correctamente",
             "datos": [
@@ -32,11 +83,11 @@ $(document).ready(function(){
                     "deporte_categoria_id": "0"
                 }
             ]
-        };
-        
-        for(var i=0; i<data.datos.length;i++){
+        };*/
+
+        /*for(var i=0; i<data.datos.length;i++){
             //$.each(data.datos[i], function(k, v) { console.log(k + ' : ' + v); });
-            console.log('id: '+data.datos[i].id + ' rut: '+data.datos[i].rut);
+            console.log('id: '+data.datos[i].deporte_id);
 
             ///categoria comienzo
             fila = '<div class="banner-bottom-grids">';
@@ -60,7 +111,7 @@ $(document).ready(function(){
             + data.datos[i].nombre +'\')">';
             fila += 'Eliminar</button></td></tr>';
             $("#categorias").append(fila);
-}
+}*/
 
 
 /*
@@ -81,7 +132,7 @@ $(document).ready(function(){
                     + " \n data msg : "+ data.message
                     + " \n textStatus : " + textStatus
                     + " \n jqXHR.status : " + jqXHR.status );
-            } 
+            }
             for(var i=0; i<data.datos.length;i++){
                                 //$.each(data.datos[i], function(k, v) { console.log(k + ' : ' + v); });
                                 console.log('id: '+data.datos[i].id + ' rut: '+data.datos[i].rut);
@@ -111,7 +162,7 @@ $(document).ready(function(){
             }
         })
         .fail(function( jqXHR, textStatus, errorThrown ) {
-            
+
             if ( console && console.log ) {
                 console.log( " La solicitud getlista ha fallado,  textStatus : " +  textStatus
                     + " \n errorThrown : "+ errorThrown
@@ -123,7 +174,7 @@ $(document).ready(function(){
 */
 
     }///end getCategorias
-});
+
 
 /*
 <div class="banner-bottom-grids">
@@ -134,7 +185,7 @@ $(document).ready(function(){
 							<p>Nulla imperdiet fermentum ipsum condimentum condimentum. Sed feugiat neque in sapien mollis malesuada. Vivamus semper massa sed tincidunt venenatis.</p>
 						</div>
 					</div>
-				</div>				
+				</div>
 				<div class="clearfix"> </div>
 */
 
@@ -143,7 +194,7 @@ $(document).ready(function(){
 
 /*
 $(document).ready(function(){
-    
+
     var getCategorias = function (){
         var datax = {
             "Accion":"listar"

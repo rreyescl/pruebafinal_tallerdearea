@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!-- saved from url=(0103)https://p.w3layouts.com/demos_new/template_demo/02-05-2017/capturing-demo_Free/159035368/web/index.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Capturing a Photo Gallery Category Bootstrap responsive Website Template | Home :: w3layouts</title>
@@ -30,8 +30,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 
 <script src="../js/detalle.js"></script>
+<script src="../js/descripcion.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
+		getCategorias();
 		$(".scroll").click(function(event){
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
@@ -99,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="index.html#services" class="scroll">Descripcion</a></li>
 								<li><a href="index.html#gallery" class="scroll">Galleria</a></li>
 								<li><a href="index.html#team" class="scroll">Equipo</a></li>
-								<li><a href="index.html#contact" class="scroll">Contacto</a></li>
+								<!--<li><a href="index.html#contact" class="scroll">Contacto</a></li>-->
 							  </ul>
 							</div><!-- /.navbar-collapse -->
 						</div>
@@ -187,16 +189,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+
+	<div class="modal about-modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="modalTitulo"><!--<span>D</span>eportes--></h4>
+					</div>
+					<div class="modal-body">
+					<div class="agileits-w3layouts-info">
+						<div id="modalImagen"><!--<img src="../img/cover.jpg" alt="">--></div>
+						<div id="modalParrafo"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- //modal -->
 
-<<<<<<< HEAD
-=======
+
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
 		<div class="container">
 			<div id="categorias">
 
-				<!-- Carga de categorias -->  
+				<!-- Carga de categorias -->
 
 			</div>
 			<!--
@@ -208,13 +226,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>Nulla imperdiet fermentum ipsum condimentum condimentum. Sed feugiat neque in sapien mollis malesuada. Vivamus semper massa sed tincidunt venenatis.</p>
 						</div>
 					</div>
-				</div>				
+				</div>
 				<div class="clearfix"> </div>
 			</div>  -->
 		</div>
 	</div>
 	<!-- //banner-bottom -->
->>>>>>> b0b9ad515b176142dfa300c99d857a024bcf718d
+
 	<!-- introduction -->
 	<div class="introduction" id="indro">
 		<div class="container">
@@ -228,9 +246,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //introduction -->
-<<<<<<< HEAD
-
-=======
 	<!---728x90--->
 	<!-- about -->
 	<div class="about" id="about">
@@ -295,7 +310,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //about -->
 	<!---728x90--->
->>>>>>> b0b9ad515b176142dfa300c99d857a024bcf718d
+
 	<!-- services -->
 	<div class="services" id="services">
 		<div class="container">
@@ -375,11 +390,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //services -->
-<<<<<<< HEAD
 
-=======
-	<!---728x90--->
->>>>>>> b0b9ad515b176142dfa300c99d857a024bcf718d
 	<!-- gallery -->
 	<div class="gallery" id="gallery">
 		<div class="container">
@@ -611,10 +622,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-=======
->>>>>>> b0b9ad515b176142dfa300c99d857a024bcf718d
+
 	<!-- subscribe -->
-	<div class="subscribe">
+	<!--<div class="subscribe">
 		<div class="container">
 			<div class="w3l-heading">
 				<h3>Subscribete!!!</h3>
@@ -627,7 +637,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</form>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<!-- //subscribe -->
 	<!-- contact -->
 	<div id="contact" class="contact">
